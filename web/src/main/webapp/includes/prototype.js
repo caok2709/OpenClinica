@@ -6595,7 +6595,17 @@ Form.EventObserver = Class.create(Abstract.EventObserver, {
     event.eventName = eventName;
     event.memo = memo;
 
-    element.dispatchEvent(event);
+    // Check if dispatchEvent exists before calling it
+    if (element.dispatchEvent) {
+      element.dispatchEvent(event);
+    } else {
+      // Fallback for older browsers or compatibility issues
+      try {
+        element.fireEvent('ondataavailable', event);
+      } catch(e) {
+        // Silent fallback if both methods fail
+      }
+    }
     return event;
   }
 

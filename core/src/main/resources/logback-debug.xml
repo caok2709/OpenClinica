@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%date{MM/dd HH:mm:ss.SSS} [%thread] %-5level %logger{35}:%L - %msg %n %ex{full}</pattern>
+    </encoder>
+  </appender>
+  
+  <!-- Debug logging for Spring Security -->
+  <logger name="org.springframework.security" level="DEBUG">
+    <appender-ref ref="CONSOLE"/>
+  </logger>
+  <logger name="org.akaza.openclinica.web.filter.OpenClinicaJdbcService" level="DEBUG">
+    <appender-ref ref="CONSOLE"/>
+  </logger>
+  <logger name="org.akaza.openclinica.core.OpenClinicaPasswordEncoder" level="DEBUG">
+    <appender-ref ref="CONSOLE"/>
+  </logger>
+  
+  <root level="INFO">
+    <appender-ref ref="CONSOLE"/>
+  </root>
+</configuration>
+

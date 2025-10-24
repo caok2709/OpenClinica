@@ -13,12 +13,11 @@
 <link rel="stylesheet" href="includes/jmesa/jmesa.css" type="text/css">
 
 <script type="text/JavaScript" language="JavaScript" src="includes/jmesa/jquery.min.js"></script>
+<script type="text/javascript" language="JavaScript" src="includes/jmesa/jquery-migrate-3.3.1.js"></script>
 <script type="text/JavaScript" language="JavaScript" src="includes/jmesa/jquery.jmesa.js"></script>
 <script type="text/JavaScript" language="JavaScript" src="includes/jmesa/jmesa.js"></script>
 <%-- <script type="text/JavaScript" language="JavaScript" src="includes/jmesa/jmesa-original.js"></script> --%>
 <script type="text/javascript" language="JavaScript" src="includes/jmesa/jquery.blockUI.js"></script>
-
-<script type="text/javascript" language="JavaScript" src="includes/jmesa/jquery-migrate-3.4.1.js"></script>
 
 <script type="text/javascript">
     function onInvokeAction(id,action) {

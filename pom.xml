@@ -310,8 +310,8 @@
 		<!-- LIQUIBASE -->
 		<dependency>
 			<groupId>org.liquibase</groupId>
-			<artifactId>liquibase-plugin</artifactId>
-			<version>1.9.5.0</version>
+			<artifactId>liquibase-maven-plugin</artifactId>
+			<version>2.0.5</version>
 			<exclusions>
 				<exclusion>
 					<groupId>org.apache.maven</groupId>
@@ -331,6 +331,11 @@
 			<groupId>org.liquibase</groupId>
 			<artifactId>liquibase-core</artifactId>
 			<version>4.10.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.yaml</groupId>
+			<artifactId>snakeyaml</artifactId>
+			<version>1.33</version>
 		</dependency>
 		<!-- Explicitly defining dependencies versions for Maven 3 -->
 		<dependency>
@@ -446,11 +451,20 @@
 				</plugin>
 				<plugin>
 					<groupId>org.liquibase</groupId>
-					<artifactId>liquibase-plugin</artifactId>
-					<version>1.9.1.0</version>
+					<artifactId>liquibase-maven-plugin</artifactId>
+					<version>2.0.5</version>
 					<configuration>
 						<propertyFile>${config.file}</propertyFile>
+						<driver>org.postgresql.Driver</driver>
+						<changeLogFile>core/src/main/resources/migration/master.xml</changeLogFile>
 					</configuration>
+					<dependencies>
+						<dependency>
+							<groupId>org.postgresql</groupId>
+							<artifactId>postgresql</artifactId>
+							<version>9.4.1212</version>
+						</dependency>
+					</dependencies>
 				</plugin>
 				<plugin>
 					<groupId>org.zeroturnaround</groupId>
